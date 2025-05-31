@@ -1,4 +1,4 @@
-package com.group3.ECommerce.search.productListing.dto;
+package com.group3.ECommerce.categorize.dtos;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -8,18 +8,16 @@ import lombok.NoArgsConstructor;
 import java.math.BigDecimal;
 
 /**
- * Data Transfer Object for Product responses.
- * Separates entity representation from API responses.
+ * Data Transfer Object for Product information
  */
 @Data
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
-public class ProductResponseDto {
+public class ProductDTO {
     private Long productId;
     private String productName;
     private String category;
     private Integer quantity;
     private BigDecimal price;
-    private boolean active;
 }
