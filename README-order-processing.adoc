@@ -1,0 +1,45 @@
+= Task: Order Processing API
+
+== Description
+Prepare a dedicated REST API for handling order processing.
+
+== Objectives
+
+    Design and Implement RESTful Endpoints: Create well-defined API endpoints for managing orders within the e-commerce system.
+    Ensure Robust Error Handling: Utilize a global exception handler to manage errors across the order processing module.
+    Develop Comprehensive Unit and Integration Tests: Achieve a minimum of 85% coverage for service layer tests and ensure all endpoints are tested.
+    Secure API Access: Implement JWT-based authentication and role-based authorization to secure endpoints.
+
+== Architectural Layers
+=== Controller Layer
+Handle HTTP requests and responses specific to order management.
+Define endpoints with appropriate HTTP methods (GET, POST, PUT, DELETE).
+
+=== Service Layer
+Encapsulate the business logic for order processing (create, update, retrieve, delete).
+Communicate with the repository layer to perform data access and manipulation.
+
+=== Repository Layer
+Interface with the database to execute CRUD operations on order data.
+
+== Endpoint Specifications
+
+    Create Order
+
+    Type: POST
+    Payload: Order details
+    Actions: Validate input, create an order in the database, return order details with a 201 status code.
+
+    Get Order by ID
+
+    Type: GET
+    Actions: Retrieve order details based on the order ID.
+
+    Delete Order
+
+    Type: DELETE
+    Actions: Verify order existence, remove the order from the database.
+
+== Validation Standards
+Use annotations like @Valid, @NotNull for method parameters in controllers to enforce validation rules.
+Implement custom validators if required for business-specific validation rules.
