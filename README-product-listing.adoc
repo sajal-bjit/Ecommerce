@@ -1,0 +1,22 @@
+= Task: Product Listings – Create and Search
+
+== Objective
+Develop the backend functionality for managing product creation and search following the architecture and coding standards outlined in the parent prompt.
+
+== Deliverables
+
+=== 1. Product Creation
+
+    Controller Method (POST): Handle product creation requests.
+    Service Layer: Implement validation and business logic to ensure required fields are present.
+    Repository: Save product and enforce uniqueness on SKU.
+    Validation: Required fields include name, description, category, price, and a unique SKU.
+    Logging: Record an audit log entry for each product created, including the user and timestamp.
+
+=== 2. Product Search
+
+    Controller Method (GET): Accept search parameters.
+    Service Layer: Handle business logic for filtering products.
+    Repository: Implement custom query to filter by: ** Product name (partial match) ** Category ** Product status (active/inactive)
+    Pagination: Add basic pagination support.
+    Logging: Log search requests with criteria and number of results returned.
