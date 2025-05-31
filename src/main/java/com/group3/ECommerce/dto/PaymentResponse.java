@@ -1,5 +1,8 @@
 package com.group3.ECommerce.dto;
 
+import lombok.Getter;
+
+@Getter
 public class PaymentResponse {
     private String id;
     private String status;
@@ -13,32 +16,16 @@ public class PaymentResponse {
         this.message = message;
     }
 
-    public String getId() {
-        return id;
-    }
-
     public void setId(String id) {
         this.id = id;
-    }
-
-    public String getStatus() {
-        return status;
     }
 
     public void setStatus(String status) {
         this.status = status;
     }
 
-    public String getTransactionId() {
-        return transactionId;
-    }
-
     public void setTransactionId(String transactionId) {
         this.transactionId = transactionId;
-    }
-
-    public String getMessage() {
-        return message;
     }
 
     public void setMessage(String message) {

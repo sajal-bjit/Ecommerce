@@ -8,11 +8,16 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class StripeConfig {
 
-    @Value("${stripe.secret.key}")
-    private String secretKey;
+    @Value("${stripe.api.key}")
+    private String apiKey;
 
     @Bean
-    public void init() {
-        Stripe.apiKey = secretKey;
+    public StripeInitializer stripeInitializer() {
+        Stripe.apiKey = apiKey;
+        return new StripeInitializer();
+    }
+
+    public static class StripeInitializer {
+        // Empty class, just to satisfy @Bean return type
     }
 }

@@ -25,7 +25,7 @@ public class PaymentController {
             PaymentResponse paymentResponse = paymentService.createPaymentIntent(paymentRequest);
             return new ResponseEntity<>(paymentResponse, HttpStatus.CREATED);
         } catch (PaymentException e) {
-            return new ResponseEntity<>(new PaymentResponse(e.getMessage()), HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>(new PaymentResponse(null, null, null, e.getMessage()), HttpStatus.BAD_REQUEST);
         }
     }
 
@@ -35,7 +35,7 @@ public class PaymentController {
             PaymentResponse paymentResponse = paymentService.capturePayment(paymentId);
             return new ResponseEntity<>(paymentResponse, HttpStatus.OK);
         } catch (PaymentException e) {
-            return new ResponseEntity<>(new PaymentResponse(e.getMessage()), HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>(new PaymentResponse(null, null, null, e.getMessage()), HttpStatus.BAD_REQUEST);
         }
     }
 
@@ -45,7 +45,7 @@ public class PaymentController {
             PaymentResponse paymentResponse = paymentService.refundPayment(paymentId);
             return new ResponseEntity<>(paymentResponse, HttpStatus.OK);
         } catch (PaymentException e) {
-            return new ResponseEntity<>(new PaymentResponse(e.getMessage()), HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>(new PaymentResponse(null, null, null, e.getMessage()), HttpStatus.BAD_REQUEST);
         }
     }
 }
