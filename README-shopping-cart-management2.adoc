@@ -1,0 +1,17 @@
+= Task: Create Category API for Categorize Section
+
+== Action
+
+    An entity for a product is already added to the context. Your task is to create an API to find products by category.
+    ** /api/v1/categorize/{category}
+
+In the repository package, create or modify a repository for the product table and add necessary methods for the provided API.
+In the exception handler, create a global exception handler and create custom exceptions if needed.
+Use the provided DTO for every response.
+The necessary business logic will be in the service layer (e.g., the service package). Use interface and its implementation.
+
+== Guideline
+
+    Follow the best coding guideline that was given before via parent prompt.
+    Code should be clean, refactored and with JavaDoc.
+    Provide comments for important logics.
