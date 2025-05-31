@@ -1,0 +1,61 @@
+### **Child Prompt: User Review Feature**
+ 
+Using the parent prompt guidelines, create a complete user review feature that includes:
+ 
+1. **Controller Method**:
+   Handle a POST request to submit a new review for a product.
+ 
+2. **Service Method**:
+   Implement business logic for:
+ 
+   * Validating user input
+   * Saving the review
+ 
+3. **Error Handling**:
+   Handle and return validation and business logic errors (e.g., duplicate reviews, invalid ratings, unauthorized access).
+ 
+4. **Logging**:
+   Log audit trails for review submissions including user ID, product ID, timestamp, and review content.
+ 
+---
+ 
+### **Requirements**:
+ 
+* **Review Details**:
+  - `rating` (1-5), `comment`, `productId`, and `userId`.
+  - Rating must be between 1 and 5 (inclusive).
+  - A user can only leave one review per product.
+  - Must verify that the product exists.
+ 
+* **Product Model**:
+  - Fields: `productId`, `productName`, `category`, `quantity`, `price`.
+ 
+* Include proper validation and exception handling.
+* Use layered architecture (Controller, Service, Repository).
+* Follow best practices for logging, validation, and error responses.
+ 
+---
+ 
+### **Expected Deliverables**:
+ 
+* **Entities and DTOs**:
+  - `Review.java`: JPA entity for the review table.
+  - `Product.java`: JPA entity representing the product with fields `productId`, `productName`, `category`, `quantity`, `price`.
+  - Optional: `ReviewRequestDTO.java` and `ReviewResponseDTO.java` for clean API contract.
+ 
+* **Repository**:
+  - `ReviewRepository.java`: For saving and querying reviews from the database.
+ 
+* **Service Layer**:
+  - `ReviewService.java`: Contains the business logic for validation and saving reviews.
+ 
+* **Controller**:
+  - `ReviewController.java`: Handles incoming HTTP POST requests for creating reviews.
+ 
+* **Error Handling**:
+  - Custom Exceptions (e.g., `DuplicateReviewException`, `InvalidRatingException`, etc.).
+ 
+* **Logging**:
+  - Audit logging integrated using SLF4J (or preferred logger). Log details such as user ID, product ID, timestamp, and review content.
+ 
+Ensure the implementation adheres to the architectural and coding standards outlined in the parent prompt, including the usage of global exception handling and ensuring the service layer handles business logic while the controller remains thin.
