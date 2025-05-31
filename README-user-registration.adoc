@@ -1,0 +1,77 @@
+Child Prompt : User Authentication and Role-Based Access Control System
+ 
+## Overview
+ 
+Develop a robust user authentication system using Spring Security that supports login, registration, and role-based access control (RBAC). This system adheres to the specified coding standards and includes several components focused on security, efficiency, and maintainability.
+ 
+---
+ 
+## System Components
+ 
+### Repository Layer
+ 
+- **Design Interfaces**: 
+  - Create repository interfaces to manage user data efficiently.
+  - Ensure efficient retrieval and storage of user credentials and roles.
+ 
+- **Query Methods**:
+  - Implement methods for finding users by username.
+  - Verify existing roles effectively.
+ 
+### Service Layer
+ 
+- **Authentication Logic**:
+  - Utilize Spring Security for secure authentication mechanisms.
+ 
+- **Registration Services**:
+  - Handle user registration with secure password hashing using BCrypt.
+  - Ensure input validation aligns with bean validation standards.
+ 
+### Controller Layer
+ 
+- **Endpoint Creation**:
+  - Define RESTful endpoints for user login, registration, and account management features like password reset and account update.
+ 
+- **Request Handling**:
+  - Securely handle requests/responses.
+  - Ensure appropriate HTTP status codes are returned for success and failure scenarios.
+ 
+### Security Configuration
+ 
+- **Spring Security Setup**:
+  - Configure Spring Security for managing user sessions and protecting resources.
+  - Effectively enforce RBAC.
+ 
+- **Access Restrictions**:
+  - Define security policies to restrict endpoint access based on user roles.
+ 
+### Role-Based Access Control (RBAC)
+ 
+- **Role Definitions**:
+  - Establish distinct roles such as Admin, User, and Guest using enums, each with specific permissions and access levels.
+ 
+- **RBAC Logic**:
+  - Implement logic ensuring actions comply with assigned user roles.
+ 
+#### Example Role Enum:
+ 
+```java
+public enum Role {
+    ADMIN, USER, GUEST;
+}
+```
+ 
+#### Security Configuration Example
+ 
+ 
+## Deliverables
+ 
+1. **Source Code**:
+   - Fully documented code for repository interfaces, service implementations, and controller endpoints.
+ 
+2. **Configuration Files**:
+   - Complete Spring Security configuration files.
+ 
+3. **Unit and Integration Tests**:
+   - Comprehensive test suite with at least 85% coverage for the service layer.
+   - Validate both functionality and security measures.
